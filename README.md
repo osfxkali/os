@@ -6,4 +6,8 @@ OS企业级项目展示
        cd /mnt/d/os  # 请根据实际项目位置调整路径"
     3. 然后重新执行安装脚本："
        chmod +x install.sh && ./install.sh"
+
+
+
+           #{徐晨皓}
     
