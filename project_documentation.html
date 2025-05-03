@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS企业级项目展示</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            padding-bottom: 1rem;
+        }
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .feature-card {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .tech-item {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .file-structure {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: monospace;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        .module-list {
+            list-style: none;
+            padding: 0;
+        }
+        .module-list li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: var(--bg-color);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+        .highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>OS企业级项目展示</h1>
+            <p>一个现代化、高性能、可扩展的操作系统解决方案</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>项目亮点</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>高性能架构</h3>
+                    <p>采用模块化设计，确保系统高效运行和良好扩展性</p>
+                </div>
+                <div class="feature-card">
+                    <h3>安全防护</h3>
+                    <p>内置防病毒功能，提供全方位系统安全保护</p>
+                </div>
+                <div class="feature-card">
+                    <h3>用户体验</h3>
+                    <p>现代化桌面环境，直观的操作界面</p>
+                </div>
+                <div class="feature-card">
+                    <h3>文件管理</h3>
+                    <p>高效的虚拟文件系统，支持多种文件系统格式</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>技术架构</h2>
+            <div class="tech-stack">
+                <span class="tech-item">系统内核</span>
+                <span class="tech-item">虚拟文件系统</span>
+                <span class="tech-item">安全模块</span>
+                <span class="tech-item">网络功能</span>
+                <span class="tech-item">图形界面</span>
+                <span class="tech-item">应用支持</span>
+            </div>
+            <div class="file-structure">
+<pre>系统核心组件：
+├── main.c          // 系统引导与初始化
+├── syscalls.c      // 系统调用实现
+├── vfs.c/h         // 虚拟文件系统
+└── partition.c/h   // 分区管理
+
+安全与网络：
+├── antivirus.c/h   // 安全防护
+├── net.c/h         // 网络功能
+└── settings.c/h    // 系统配置
+
+用户界面：
+├── desktop.c/h     // 桌面环境
+├── menu.c/h        // 菜单系统
+└── shell.c/h       // 命令行接口
+
+应用程序：
+├── browser.c/h     // 网页浏览
+├── wps.c/h         // 文档处理
+├── games.c/h       // 游戏支持
+└── file_manager.c/h // 文件管理</pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>核心功能模块</h2>
+            <div class="module-list">
+                <li>
+                    <h3>系统核心</h3>
+                    <p>基于现代化设计的系统内核，提供高效的系统调用和资源管理。主要包括：</p>
+                    <ul>
+                        <li>高效的内存管理机制</li>
+                        <li>多任务调度系统</li>
+                        <li>设备驱动框架</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>文件系统</h3>
+                    <p>采用虚拟文件系统（VFS）架构，支持多种文件系统格式，提供统一的文件操作接口。特点：</p>
+                    <ul>
+                        <li>高性能文件读写</li>
+                        <li>文件系统抽象层</li>
+                        <li>多文件系统支持</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>安全系统</h3>
+                    <p>全方位的系统安全解决方案，包括：</p>
+                    <ul>
+                        <li>实时病毒防护</li>
+                        <li>系统完整性检查</li>
+                        <li>安全策略管理</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>用户界面</h3>
+                    <p>现代化的图形用户界面，提供：</p>
+                    <ul>
+                        <li>直观的操作体验</li>
+                        <li>个性化定制选项</li>
+                        <li>多任务窗口管理</li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>技术特色</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>模块化设计</h3>
+                    <p>采用高度模块化的架构设计，各功能模块独立封装，便于维护和扩展</p>
+                </div>
+                <div class="feature-card">
+                    <h3>性能优化</h3>
+                    <p>核心组件经过深度优化，确保系统运行效率和响应速度</p>
+                </div>
+                <div class="feature-card">
+                    <h3>安全可靠</h3>
+                    <p>多层次安全防护机制，保障系统和数据安全</p>
+                </div>
+                <div class="feature-card">
+                    <h3>易于扩展</h3>
+                    <p>预留扩展接口，支持快速开发和集成新功能</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

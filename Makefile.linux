@@ -1,0 +1,48 @@
+# Linux系统构建和安装配置
+PREFIX = /usr/local
+BINDIR = $(PREFIX)/bin
+SYSDIR = $(PREFIX)/lib/simpleos
+DOCDIR = $(PREFIX)/share/doc/simpleos
+
+CC = gcc
+AS = nasm
+LD = ld
+INSTALL = install
+
+CFLAGS = -Wall -O2 -I. -ffreestanding
+LDFLAGS = -T linker.ld -nostdlib -nostartfiles
+
+# 源文件
+SRC_C = main.c net.c antivirus.c vfs.c partition.c file_manager.c \
+        browser.c wps.c games.c settings.c shell.c menu.c desktop.c syscalls.c
+SRC_ASM = start.s
+OBJ = $(SRC_C:.c=.o) $(SRC_ASM:.s=.o)
+
+# 构建目标
+all: simpleos
+
+simpleos: $(OBJ)
+	$(LD) $(LDFLAGS) -o $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+%.o: %.s
+	$(AS) -f elf64 $< -o $@
+
+# 安装目标
+install: simpleos
+	$(INSTALL) -d $(DESTDIR)$(BINDIR)
+	$(INSTALL) -d $(DESTDIR)$(SYSDIR)
+	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
+	$(INSTALL) -d $(DESTDIR)/etc/ld.so.conf.d
+	$(INSTALL) -m 755 simpleos $(DESTDIR)$(BINDIR)/
+	$(INSTALL) -m 644 project_documentation.html $(DESTDIR)$(DOCDIR)/
+	$(INSTALL) -m 644 *.h $(DESTDIR)$(SYSDIR)/
+	echo "/usr/local/lib/simpleos" > $(DESTDIR)/etc/ld.so.conf.d/simpleos.conf
+
+# 清理目标
+clean:
+	rm -f *.o simpleos
+
+.PHONY: all install clean

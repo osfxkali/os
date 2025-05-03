@@ -1,0 +1,18 @@
+Package: simpleos
+Version: 1.0.0
+Section: system
+Priority: optional
+Architecture: amd64
+Depends: libc6
+Maintainer: SimpleOS Team <maintainer@simpleos.org>
+Description: SimpleOS Operating System
+ A modern operating system with graphical user interface,
+ virtual file system, security features and application support.
+ .
+ Key features:
+  * Modern kernel with efficient system calls
+  * Virtual File System (VFS) architecture
+  * Security system with real-time protection
+  * Graphical user interface
+  * Built-in applications
+

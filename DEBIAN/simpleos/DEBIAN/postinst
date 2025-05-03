@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# 设置权限
+chmod 755 /usr/local/bin/simpleos
+chmod 644 /usr/local/share/doc/simpleos/*
+
+# 创建设备节点（如果需要）
+# 用户空间安装不需要创建设备节点
+# if [ ! -e /dev/fb0 ]; then
+#     mknod /dev/fb0 c 29 0
+#     chmod 666 /dev/fb0
+# fi
+
+# 更新系统配置
+# 更新动态链接库缓存
+# 用户空间安装不需要更新系统库缓存
+# ldconfig
+
+exit 0

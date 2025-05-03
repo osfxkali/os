@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	make -f Makefile.linux clean
+	make -f Makefile.linux
+
+override_dh_auto_install:
+	mkdir -p debian/simpleos/usr/local/bin
+	mkdir -p debian/simpleos/usr/local/lib/simpleos
+	mkdir -p debian/simpleos/usr/local/share/doc/simpleos
+	mkdir -p debian/simpleos/etc/ld.so.conf.d
+	make -f Makefile.linux install DESTDIR=debian/simpleos
+
+override_dh_usrlocal:
+enen
+override_dh_fixperms:
+	dh_fixperms
+	chmod 755 debian/simpleos/usr/local/bin/simpleos
+	chmod 644 debian/simpleos/usr/local/share/doc/simpleos/*
+
+.PHONY: override_dh_auto_build override_dh_auto_install override_dh_usrlocal override_dh_fixperms

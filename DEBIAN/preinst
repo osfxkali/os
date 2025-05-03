@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# 创建必要的目录
+mkdir -p ~/.local/lib/simpleos
+mkdir -p ~/.local/share/doc/simpleos
+
+exit 0
